@@ -1,0 +1,36 @@
+<h4 class="{{prefix}}heading" style="margin-bottom: 20px;">{{heading}}</h4>
+<div style="margin-bottom: 20px;">
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"", link:page.index, name:"Услуги" } %}	
+	{# {% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--success", link:page.index, name:"Поиск техники" } %}	
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--white", link:page.index, name:"Поиск техники" } %}	
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--black-29", link:page.index, name:"Поиск техники" } %}	
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--arrow", link:page.index, name:"Поиск техники" } %}	 #}
+</div>
+<div style="margin-bottom: 20px;">
+	{% include "btn.twig" with {
+		view:"link",
+		prefix:"link__", 
+		mod:"", link:page.index, 
+		name:"Все фото" 
+	} %}
+</div>
+{# <div style="margin-bottom: 20px;">
+	<p style="margin-bottom: 5px;">Medium</p>
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--arrow  is--md", link:page.index, name:"Продолжить" } %}	
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--arrow  is--md  is--success", link:page.index, name:"Вернуться в каталог" } %}
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--arrow  is--md  is--white", link:page.index, name:"Вернуться в каталог" } %}
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--arrow  is--md  is--black-29", link:page.index, name:"Вернуться в каталог" } %}
+</div>
+<div style="margin-bottom: 20px;">
+	<p style="margin-bottom: 5px;">Large</p>
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--lg", link:page.index, name:"Скачать PDF" } %}
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--lg  is--success", link:page.index, name:"Скачать PDF" } %}
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--lg  is--white", link:page.index, name:"Скачать PDF" } %}
+	{% include "btn.twig" with {view:"link",prefix:"btn__", mod:"is--lg  is--black-29", link:page.index, name:"Скачать PDF" } %}
+</div> #}
+{# <div style="margin-bottom: 20px;">
+	{% include "btn.twig" with {view:"modal",prefix:"btn__", mod:"", target:"modal-form", name:"Модальное окно", m_heading: "Заказать звонок", m_heading_sm: "Мы перезвоним вам в ближайшее время", m_btn:"Отправить", } %}
+</div>
+<div style="margin-bottom: 20px;">		
+	{% include "btn.twig" with {view:"link",prefix:"link__", mod:"is--xs", link:page.index, name:"На главную" } %}
+</div> #}

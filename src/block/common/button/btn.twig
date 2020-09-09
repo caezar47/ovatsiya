@@ -1,0 +1,18 @@
+{% if view == "modal" %}
+<button type="button" class="{{prefix}}item  {{mod}}" data-toggle="modal" data-target="#{{target}}"  {% if type %}data-type="{{type}}"{% endif %}>{{name}}</button>
+{% endif %}
+
+{% if view == "btn" %}
+<button type="{{type}}" class="{{prefix}}item  {{mod}}" {% if heading_view == "modal" %}data-btn-heading{% endif %}>{{name}}</button>
+{% endif %}
+
+{% if view == "link" %}
+<a href="{{link}}" class="{{prefix}}item  {{mod}}">
+	{% if icon %}
+	<span class="{{prefix}}icon  {{mod}}">{% include "../svg-sprite/svg.twig" with {icon:icon} %}</span>
+	{% endif %}
+	{% if name %}
+	<span>{{name}}</span>
+	{% endif %}
+</a>  
+{% endif %}

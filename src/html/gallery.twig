@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>  
+        {% include "../block/common/head/head.twig" with {title:"Фото"}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            navbar_prefix:"navbar__", 
+            navbar_mod:"is--scroll",
+            active:page.gallery,
+        } %}
+
+        <main class="{{prefix.section}}wrap">
+            {% include "../block/page/gallery.twig" with {
+                view:"page", 
+                prefix:prefix.section, 
+                mod:"is--page-gallery", 
+                heading_group:"", 
+                heading_mod:"is--h2  is--default", 
+                heading_level:"h1", 
+                heading:"Фото"
+            } %} 
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {% include "../block/common/modals/include.twig"%}
+        {% include "../block/common/script/script.twig" with {
+            aos: 'view'
+        }%}
+    </body>
+</html> 

@@ -1,0 +1,39 @@
+<footer class="{{footer_prefix}}block">	
+	<div class="{{footer_prefix}}container container">
+		<div class="{{footer_prefix}}row  row">
+			<div class="{{footer_prefix}}cols  cols  is--logotip">
+				<a href="{{page.index}}" class="{{footer_prefix}}logotip">
+					<img src="{{path.img}}/default/logotip.png" class="img-responsive" alt="">
+				</a>
+			</div>
+			<div class="{{footer_prefix}}cols  cols  is--contacts">
+				<p class="{{footer_prefix}}value">
+					<span class="{{footer_prefix}}icon">
+						{% include "../svg-sprite/svg.twig" with {icon:"contacts-address"} %}
+					</span>
+					{{contacts.address}}
+				</p>
+				<p class="{{footer_prefix}}value  is--phone">
+					<span class="{{footer_prefix}}icon">
+						{% include "../svg-sprite/svg.twig" with {icon:"contacts-phone"} %}
+					</span>
+					<a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a>,&nbsp; <a href="tel:{{contacts.phone2_tel}}">{{contacts.phone2}}</a>
+				</p>
+			</div>
+			<div class="{{footer_prefix}}cols  cols  is--soc">
+				<p class="{{footer_prefix}}copyright">Салон красоты «Овация» &copy; 2020</p>
+				{% include "../social/tpl.twig" with {
+					prefix:"social__", 
+					attr:"", 
+					mod:"is--footer", 
+					list: [
+						{"name":"soc-inst", "link":soc.inst},
+						{"name":"soc-ok", "link":soc.ok},
+						{"name":"soc-fb", "link":soc.fb},
+						{"name":"soc-vk", "link":soc.vk}
+					]
+				} %}
+			</div>
+		</div>	
+	</div>
+</footer>

@@ -1,0 +1,39 @@
+{% if view == "services" %}
+	{% for value in list %}		
+	<div class="{{prefix}}item  {{mod}}"  {% if card_aos %}data-aos="{{card_aos}}" {% if value.delay %}data-aos-delay="{{value.delay}}"{% endif %}{% endif %}>
+		<picture class="{{prefix}}wrap  {{mod}}">
+			<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">	
+				<img src="{{value.preview}}" class="img-responsive" alt="{{value.heading}}">
+			</a>
+		</picture>
+		<p class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></p> 
+		<a href="#" class="btn__item">запись онлайн</a>
+	</div> 
+	{% endfor %}
+{% endif %}
+
+{% if view == "reviews" %}
+	{% for value in list %}		
+	<div class="{{prefix}}item  {{mod}}">
+		<picture class="{{prefix}}preview  {{mod}}">
+			<img src="{{value.preview}}" class="img-responsive" alt="{{value.heading}}">
+		</picture>
+		<div class="{{prefix}}wrap  {{mod}}">
+			<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p> 
+			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div> 
+			{% if value.link %}<a href="{{value.link}}" class="{{prefix}}link  {{mod}}">подробнее →</a>{% endif %}
+		</div> 
+	</div> 
+	{% endfor %}
+{% endif %}
+
+{% if view == "adv" %}
+	{% for value in list %}		
+	<div class="{{prefix}}item  {{mod}}">
+		<picture class="{{prefix}}preview  {{mod}}">
+			<img src="{{value.preview}}" class="img-responsive" alt="{{value.heading}}">
+		</picture>
+		<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p> 
+	</div> 
+	{% endfor %}
+{% endif %}

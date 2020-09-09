@@ -1,0 +1,36 @@
+{% if view=="sale" %}
+	<form action="#" data-form-validation class="{{prefix}}panel  {{mod}}">
+		{% include "../../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:fheading_mod, 
+			level:fheading_level, 
+			heading:fheading
+		} %}
+		<div class="{{prefix}}row  grid__row  {{mod}}">
+			{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+				{
+					"type":"text",
+					"id":"fio",
+					"form_id":ID,
+					"validate":"validate[required, custom[onlyLetterSp]]",
+					"name":"Имя",
+					"placeholder":"Имя",
+				},
+				{
+					"type":"tel",
+					"id":"tel",
+					"form_id":ID,
+					"validate":"validate[required, custom[phone]]",
+					"name":"Телефон",
+					"placeholder":"Телефон",
+				},
+			]} %}
+		</div>
+		{% include "../../common/page-header/tpl.twig" with {
+			prefix:"page-header__", 
+			mod:agreement_mod, 
+			level:agreement_level, 
+			heading:agreement} %}
+		<button type="submit" class="btn__item  is--size-xl">запись онлайн</button>	
+	</form>
+{% endif %}

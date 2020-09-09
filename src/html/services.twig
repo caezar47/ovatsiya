@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>  
+        {% include "../block/common/head/head.twig" with {title:"Услуги"}  %}
+    </head>
+    <body>
+        {% include "../block/common/navbar/navbar.twig" with {
+            navbar_prefix:"navbar__", 
+            navbar_mod:"is--scroll",
+            active:page.services,
+        } %}
+
+        <main class="{{prefix.section}}wrap">
+            {% include "../block/page/services.twig" with {
+                view:"page", 
+                prefix:prefix.section, 
+                mod:"is--page-services", 
+                heading_group:"", 
+                heading_mod:"is--h2  is--default", 
+                heading_level:"h1", 
+                heading:"Услуги", 
+                bg:[path.img,"/default/bg-index-header.png"].join(''),
+
+                card_view: "services",
+                card_prefix: "card__",
+                card_mod: "is--services",
+                card_aos: "fade-up",
+                card_list: [
+                    {   
+                        "link":page.services_card, 
+                        "heading":"Маникюрный зал", 
+                        "preview":[path.img,"/default/services-item1.jpg"].join(''),
+                        "delay":"100",
+                    },
+                    {   
+                        "link":page.services_card, 
+                        "heading":"Педикюрный зал", 
+                        "preview":[path.img,"/default/services-item2.jpg"].join(''),
+                        "delay":"300",
+                    },
+                    {   
+                        "link":page.services_card, 
+                        "heading":"Парикмахерский зал", 
+                        "preview":[path.img,"/default/services-item3.jpg"].join(''),
+                        "delay":"600",
+                    },
+                    {   
+                        "link":page.services_card, 
+                        "heading":"Татуаж", 
+                        "preview":[path.img,"/default/services-item4.jpg"].join(''),
+                        "delay":"900",
+                    },
+                    {   
+                        "link":page.services_card, 
+                        "heading":"Шугаринг", 
+                        "preview":[path.img,"/default/services-item5.jpg"].join(''),
+                        "delay":"1200",
+                    },
+                    {   
+                        "link":page.services_card, 
+                        "heading":"Ламинирование ресниц", 
+                        "preview":[path.img,"/default/services-item6.jpg"].join(''),
+                        "delay":"1500",
+                    },
+                    {   
+                        "link":page.services_card, 
+                        "heading":"Архитектура бровей", 
+                        "preview":[path.img,"/default/services-item7.jpg"].join(''),
+                        "delay":"1800",
+                    },
+                ]
+            } %} 
+        </main>
+
+        {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
+
+        {% include "../block/common/modals/include.twig"%}
+        {% include "../block/common/script/script.twig" with {
+            aos: 'view'
+        }%}
+    </body>
+</html> 

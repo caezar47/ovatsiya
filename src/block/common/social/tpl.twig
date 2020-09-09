@@ -1,0 +1,9 @@
+<ul class="{{prefix}}block  {{mod}}" {{attr}}>
+	{% for value in list %}	
+	<li class="{{prefix}}item  {{mod}}">
+		<a href="{{value.link}}" class="{{prefix}}link  {{mod}}" target="_blank">
+			{% include "../svg-sprite/svg.twig" with {icon:value.name} %}
+		</a>
+	</li>
+	{% endfor %}
+</ul>

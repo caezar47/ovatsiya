@@ -1,0 +1,125 @@
+.btn__{
+	&item{
+		.btn-clearfix();
+		font-weight: 500;
+		display: inline-flex; 	
+		font-size: @btn_fs;
+		line-height: @btn_lh;
+		letter-spacing: 0.02em;
+		background-color: @btn_bg_color; 
+		color: @btn_color;	
+		border: 2px solid @btn_border_color;	
+		text-align: center;	
+		padding: 10px 30px;
+		border-radius: 30px;
+		&:hover{
+			background-color: @btn_hover_bg_color;
+			color: @btn_hover_color;
+		}
+		&:focus{				
+		}
+		&.is--size{
+			&-xl{
+				border-width: 4px;
+				font-size: 1rem;
+				line-height: 180%;
+				padding: 7px 20px;
+				letter-spacing: 0.07em;
+				border-radius: 30px;
+				.media-breakpoint-up(@lg; {
+					padding: 14px 40px;
+				});
+			}
+		}
+		&.is--page{
+			&-index{
+				&-header{
+					margin-bottom: 30px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 3.6vw;
+					});
+				}
+			}
+		}
+	}
+}
+/*
+.link__{
+	&item{
+		.btn-clearfix();
+		position: relative;
+		font-weight: 700;
+		color: @link_color;
+		display: inline-block;
+		transition: @trs-site; 
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 33px;
+			height: 3px;
+			background-color: @link_border;
+			transform-origin: 0 0;
+			transform: translate(0, 100%);
+			transition: @trs-site; 
+		}
+		&:hover{	
+			color: @link_color;
+			&::after{
+				width: 100%;
+			}		
+		}
+		&.is--icon{
+			display: inline-flex;
+			align-items: center;
+			line-height: 1em;
+			&::after{
+				display: none;
+			}
+			&:hover{
+				color: @success;
+			}
+		}
+	}
+	&icon{
+		&.is--pointer{
+			width: 1.278rem;
+			height: 1.667rem;
+			margin-right: 0.5rem;
+		}
+		&.is--cards{
+			width: 1.667rem;
+			height: 1.667rem;
+			margin-right: 1rem;
+		}
+	}
+}
+.icon__{
+	&item{
+		.btn-clearfix();
+		position: relative;
+		font-weight: 700;
+		color: @link_color;
+		display: inline-block;
+		transition: @trs-site; 
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 33px;
+			height: 3px;
+			background-color: @link_border;
+			transform-origin: 0 0;
+			transform: translate(0, 100%);
+			transition: @trs-site; 
+		}
+		&:hover{	
+			color: @link_color;
+			&::after{
+				width: 100%;
+			}		
+		}
+	}
+}*/

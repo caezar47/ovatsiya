@@ -1,0 +1,78 @@
+.page-header__{
+	&panel{
+		
+	}
+	&heading{
+		&.is--page{
+			&-index{
+				&-header{
+					text-transform: uppercase;
+					font-size: 3.5em;
+					line-height: 94%;
+					font-weight: 400;
+					letter-spacing: 0.5rem;
+					margin-bottom: 30px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 3.2vw;
+						font-size: 4.813em;
+					});
+					small{
+						font-size: 83%;
+						letter-spacing: 0;
+					}
+					span{
+						font-size: 97%;
+						color: @primary;
+						font-family: @site_ff_custom;
+						letter-spacing: 0;
+					}
+				}
+				&-services{
+					margin-bottom: 30px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 4.2vw;
+					});
+				}
+				&-about{
+					margin-bottom: 25px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 1.5vw;
+					});
+				}
+				&-sale{
+					letter-spacing: 0.03em;
+					margin-bottom: 25px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 2.35vw;
+					});
+					span{
+						font-size: 177%;
+						color: @primary;
+						font-weight: 600;
+						letter-spacing: 0;
+					}
+					&-form{
+						margin-bottom: 18px;
+					}
+					&-agree{
+						font-size: 0.750em;
+						line-height: 170%;
+						margin-bottom: 18px;
+					}
+				}
+				&-reviews{
+					margin-bottom: 30px;
+					.media-breakpoint-up(@lg; {
+						margin-bottom: 3.5vw;
+					});
+				}
+				&-seo{
+					margin-bottom: 27px;
+					&-sm{
+						margin-bottom: 32px;
+					}
+				}
+			}
+		}
+	}
+}

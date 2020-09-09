@@ -1,0 +1,17 @@
+<ol class="{{prefix}}list  {{mod}}  {{group}}">
+	{% if prev == "true" %}	
+	<li class="{{prefix}}item  {{mod}}">
+		<a href="#" class="{{prefix}}link  {{mod}}  is--prev">&nbsp;</a>
+	</li>
+	{% endif %}
+	{% for value in list %}		
+	<li class="{{prefix}}item  {{mod}}  {% if value.name == active %}is--active{% endif %}"">
+		<a href="#" class="{{prefix}}link  {{mod}}">{{value.name}}</a>
+	</li>
+	{% endfor %}
+	{% if next == "true" %}	
+	<li class="{{prefix}}item  {{mod}}">
+		<a href="#" class="{{prefix}}link  {{mod}}  is--next">&nbsp;</a>
+	</li>
+	{% endif %}
+</ol>

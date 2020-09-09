@@ -1,0 +1,67 @@
+{
+	"contacts":{
+		"name":"TPL",
+		"domain":"salon-ovatsiya.ru",
+		"domain_link":"https://salon-ovatsiya.ru/",
+		"color":"#F24F00",
+		"email":"partnerdir@fedoperator.ru",
+		"phone":"8 (4872) 42-85-52",  
+		"phone_tel":"84872428552",   
+		"phone2":"8 (953) 964-52-52",  
+		"phone2_tel":"89539645252",   
+		"clock":"Ежедневно 9:00 - 21:00",  
+		"address":"Тула, Кирова, 25",
+		"inn":"5753990652",  
+		"ogrn":"1145700000269",  
+		"map_center_coord":"[52.97067, 36.084622]",
+		"map_zoom":"17",
+		"map_point_coord":"[52.97067, 36.084622]",
+		"map_point_heading":"Мы здесь!"
+	},
+	"soc":{
+		"vk":"https://vk.com/id294285334",
+		"ok":"https://ok.ru/profile/552289685496",
+		"fb":"https://www.facebook.com/ovaciya/",
+		"inst":"https://www.instagram.com/salonovaciyatula/"
+	},
+	"page":{
+		"header":"block-header",
+		"services":"block-services",
+		"about":"block-about",
+		"sale":"block-sale",
+		"reviews":"block-reviews",
+		"seo":"block-seo"
+	},
+	"page":{
+		"index":"./",
+		"about":"./about.html",
+		"structure":"./structure.html",
+		"services":"./services.html",
+		"action":"./action.html",
+		"action":"./action.html",
+		"team":"./team.html",
+		"gallery":"./gallery.html",
+		"reviews":"./reviews.html",
+		"contacts":"./contacts.html",
+		"404":"./404.html",
+		"sitemap":"./sitemap.html",
+		"style":"./style.html",
+		"agreement":"./agreement.html"
+	},
+	"prefix":{
+		"section":"section__",
+		"header":"page-header__",
+		"form":"form__",
+		"btn":"btn__",
+		"link":"link__",
+		"breadcrumb":"breadcrumb__",
+		"card":"card-item__"
+	},	 
+	"path":{		                  
+		"css":"./css",
+		"img":"./img",
+		"js":"./js",
+		"favicon":"./favicon",
+		"docs":"./docs"
+	}
+}

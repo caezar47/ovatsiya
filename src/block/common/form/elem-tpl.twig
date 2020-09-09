@@ -1,0 +1,118 @@
+{% if view == "input" %}
+	{% for value in list %}	
+	<p class="{{prefix}}item  {{mod}}  {{value.mod_elem}}"  {% if value.required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+		<input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}" {{value.required}} placeholder="{{value.placeholder}}" {% if value.view == "date" %}onfocus="(this.type='date')"{% endif %} id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]">
+		{% if value.icon %}<span class="{{prefix}}control-icon  {{mod}}  {{color}}">{% include "../svg-sprite/svg.twig" with {icon:value.icon} %}</span>{% endif %}
+		{# <input type="{{value.type}}" class="{{prefix}}control  {{value.validate}}  {{mod}}  {{color}}"  placeholder="{{value.placeholder}}" > #}
+	</p>
+	{% endfor %}
+{% endif %}
+
+{% if view == "file" %}
+	<p class="{{prefix}}item  {{mod}}">
+		<label class="{{prefix}}file  {{mod}}  {{color}}">
+			<input type="file"  class="{{prefix}}file-input  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+			<span class="{{prefix}}file-icon  {{mod}}  {{color}}">{% include "../svg-sprite/svg.twig" with {icon:'icon-file'} %}</span>
+			<span class="{{prefix}}file-name  {{mod}}  {{color}}" data-heading="{{name}}">{{name}}</span>
+		</label>
+	</p>
+{% endif %}
+
+{% if view == "select" %}
+	<p class="{{prefix}}item  {{mod}}  {{group}}  {% if error == "true" %}is--error{% endif %}"  {% if required == "required" %}data-error="Обязательно к заполнению"{% endif %}>
+		{% if label %}
+		<label class="{{prefix}}label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
+		{% endif %}
+		<select class="{{prefix}}control  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]"  {{attr}}  {{required}}>
+			{% for value in list %}
+				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
+			{% endfor %}	
+		</select>
+	</p>
+{% endif %}
+
+{% if view == "radio" %}
+	<div class="{{prefix}}item  is--radio  {{mod}}  {{mod_elem}}">
+		{% for value in list %}
+		<label class="{{prefix}}radio  {{mod}}  {{color}}">
+			<input class="{{prefix}}radio-input  {{mod}}  {{color}}" type="radio" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" {{value.status}}>
+			<span class="{{prefix}}radio-box  {{mod}}  {{color}}">
+				<svg class="{{prefix}}radio-icon  {{mod}}  {{color}}" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M13.908 7.448c.47.44.507 1.193.085 1.682l-4.114 4.762c-.214.246-.516.39-.834.394a1.121 1.121 0 0 1-.844-.37l-2.172-2.382a1.226 1.226 0 0 1 .042-1.683 1.11 1.11 0 0 1 1.615.043l1.32 1.448 3.288-3.805a1.111 1.111 0 0 1 1.614-.089z"/>
+				</svg>
+			</span>
+			{{value.label}}
+		</label>
+		{% endfor %}
+	</div>
+{% endif %}
+
+{% if view == "checkbox" %}
+	<div class="{{prefix}}item  {{mod}}  {{group}}">
+		{% for value in list %}
+		<label class="{{prefix}}checkbox  {{mod}}  {{color}}  {{value.group}}">
+			<input class="{{prefix}}checkbox-input  {{mod}}  {{color}}" type="checkbox" id="{{value.form_id}}[{{value.id}}]" name="f[{{value.name}}]" {{value.status}}>
+			<span class="{{prefix}}checkbox-icon  {{mod}}  {{color}}"></span>
+			{{value.label}}
+		</label>
+		{% endfor %}
+	</div>
+{% endif %}
+
+{% if view == "agreement" %}
+	<div class="{{prefix}}item  {{mod}}  is--agreement">
+		<input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
+		<div class="{{prefix}}text  {{mod}}  {{color}}  is--agreement">	
+			Соглашаюсь с условиями передачи информации</a>
+		</div>	
+	</div>
+{% endif %}
+
+{% if view == "textarea" %}	
+	<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
+		<textarea class="{{prefix}}control form-control {{validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]" placeholder="{{placeholder}}"></textarea>
+	</div>
+{% endif %}
+
+
+
+{# {% if view == "filter" %}
+	<p class="{{prefix}}filter  {{mod}}  {{group}}">
+		{% if label %}
+		<label class="{{prefix}}filter-label  {{mod}}" for="{{form_id}}[{{id}}]">{{label}}</label>
+		{% endif %}
+		<select class="{{prefix}}filter-select  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]">
+			{% for value in list %}
+				<option value="{{value.val}}" {{value.status}}>{{value.name}}</option>
+			{% endfor %}	
+		</select>
+	</p>
+{% endif %} #}
+
+{# {% if view == "range" %}
+	<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
+		<div class="{{prefix}}label  {{mod}}  {{mod_elem}}">
+			{{label}}
+		</div>
+		<input type="text" class="js-range-slider" 
+			data-min="{{min}}" 
+			data-max="{{max}}"
+			data-from="{{from}}"
+			data-to="{{to}}"
+			data-type="{{type}}"
+			data-step="{{step}}">
+	</div>
+{% endif %}
+
+{% if view == "reset" %}
+	<div class="{{prefix}}item  is--reset  {{mod}}  {{mod_elem}}">
+		<button type="reset" class="{{prefix}}reset  {{mod}}  {{color}}">
+			<svg class="{{prefix}}reset-icon  {{mod}}  {{color}}  {{mod_elem}}" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg">
+				<path class="{{prefix}}reset-icon-check  {{mod}}  {{color}}  {{mod_elem}}" d="M21.4553 8.926c-.481-.3208-1.1309-.1908-1.4515.2901l-.0312.0467C19.594 4.0917 15.2661 0 10 0 4.486 0 0 4.486 0 10s4.486 10 10 10c.7707 0 1.3955-.6248 1.3955-1.3956 0-.7708-.6248-1.3956-1.3955-1.3956-3.975 0-7.2088-3.2339-7.2088-7.2088S6.025 2.7912 10 2.7912c3.6842 0 6.7312 2.7783 7.1573 6.3497-.3359-.4181-.9411-.518-1.3956-.2148-.481.3207-.6109.9706-.2902 1.4515l2.0726 3.108c.2446.3668.6426.5858 1.0645.5858.422 0 .8198-.2191 1.0643-.5858l2.0726-3.108c.3206-.481.1907-1.1308-.2902-1.4515z"/>
+			</svg>
+			<div class="{{prefix}}reset-label  {{mod}}  {{color}}">
+				{{name}}
+			</div>
+		</button>	
+	</div>
+{% endif %} #}

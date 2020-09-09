@@ -1,0 +1,39 @@
+<div class="{{prefix}}block modals  fade  {{mod}}" id="{{ID}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="{{prefix}}dialog  {{mod}}">
+		<div class="{{prefix}}body  {{mod}}" >
+			<button type="button" class="{{prefix}}btn-close  modal-close" data-dismiss="modal" aria-hidden="true">
+				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
+			</button>
+			<div class="{{prefix}}content  {{mod}}">
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod, 
+					level:heading_level, 
+					heading:heading} %}	
+				{% include "../../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:note_mod, 
+					level:note_level, 
+					heading:note} %}	
+				{% if ID == "modal-call" %}
+					{% include "../form/form.twig" with {
+						view: 			"call", 
+						prefix:			"form__",
+						mod:			"is--block-modal", 
+						color:			"", 
+						ID: 			"fm_call",  
+					} %}
+				{% endif %}	
+				{% if ID == "modal-career" %}
+					{% include "../form/form.twig" with {
+						view: 			"career_modal", 
+						prefix:			"form__",
+						mod:			"is--block-modal", 
+						color:			"", 
+						ID: 			"fm_career",  
+					} %}
+				{% endif %}	
+			</div> 
+		</div>
+	</div>
+</div>

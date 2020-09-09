@@ -1,0 +1,11 @@
+<ul class="{{prefix}}list  {{mod}}">
+	{% for value in bread %}	
+	{% if value.link != null %}
+	<li class="{{prefix}}list-item">
+		<a href="{{value.link}}" class="{{prefix}}list-link">{{value.name}}</a>
+	</li>
+	{% else %}
+	<li class="{{prefix}}list-item  is--active">{{value.name}}</li>
+	{% endif %}
+	{% endfor %}
+</ul>

@@ -1,0 +1,22 @@
+{% for value in list %}
+	<div class="{{prefix}}card  {{mod}}  {{value.mod}}"> 		
+		{% if value.icon %}
+		<p class="{{prefix}}icon  {{mod}}">{% include "../svg-sprite/svg.twig" with {icon:value.icon} %}</p>
+		{% endif %} 		
+		{% if value.label %}
+		<p class="{{prefix}}label  {{mod}}">{{value.label}}</p>
+		{% endif %}
+		<div>
+			{% if value.name %}
+			<{{value.tag}} {% if value.href %}href="{{value.target}}{{value.href}}"{% endif %} class="{{prefix}}name  {{mod}}">
+				{{value.name}}
+			</{{value.tag}}>
+			{% endif %}
+			{% if value.sublist %}
+				{% for v in value.sublist %}
+					<p class="{{prefix}}name  {{mod}}"><{{v.tag}} href="{{v.target}}{{v.href}}">{{v.name}}</{{v.tag}}></p>
+				{% endfor %} 
+			{% endif %}
+		</div>
+	</div>
+{% endfor %} 

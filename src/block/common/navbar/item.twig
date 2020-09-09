@@ -1,0 +1,19 @@
+{% for value in list %}
+<li class="{{prefix}}nav-item {% if value.sublist %}dropdown{% endif %}  {{value.mod}}" >
+	<a href="{{value.link}}" {% if value.sublist %}data-toggle="dropdown"{% endif %} class="{{prefix}}nav-link {% if value.sublist %}dropdown-toggle{% endif %} {{value.mod}}  {% if value.link == active %}is--active{% endif %}">
+		{{value.name}}		
+	</a>  
+	{% if value.sublist %}
+	<div class="{{prefix}}nav-dropdown dropdown-menu">			
+		<ul class="{{prefix}}nav-dropdown-menu">
+		    {% for v in value.sublist %}
+			<li class="{{prefix}}nav-dropdown-item  {{v.mod}} {% if v.link == active %}is--active{% endif %}">
+				<a href="{{v.link}}" {% if v.modal %}data-toggle="modal" data-target="{{v.modal}}"{% endif %} class="{{prefix}}nav-dropdown-link"><span>{{v.name}}</span>
+				</a>
+			</li>
+		    {% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+</li>
+{% endfor %}

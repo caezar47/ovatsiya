@@ -1,0 +1,171 @@
+{% if view == "header" %}
+	<section class="{{prefix}}panel  {{mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %} >
+		<div class="{{prefix}}container  container  {{mod}}">
+			<div class="{{prefix}}inner  {{mod}}">
+				{% include "../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}
+				<a href="#" class="btn__item  is--size-xl  {{mod}}">запись онлайн</a>
+				{% include "../common/social/tpl.twig" with {
+					prefix:"social__", 
+					attr:"", 
+					mod:"is--round", 
+					list: [
+						{"name":"soc-inst", "link":soc.inst},
+						{"name":"soc-ok", "link":soc.ok},
+						{"name":"soc-fb", "link":soc.fb},
+						{"name":"soc-vk", "link":soc.vk}
+					]
+				} %} 
+			</div>	
+		</div>	
+		<div class="{{prefix}}preview  {{mod}}" >
+			<img src="{{img}}" class="img-responsive" alt="">	
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "services" %}
+	<section class="{{prefix}}panel  {{mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %} >
+		<div class="{{prefix}}container  container  {{mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../common/card/card.twig" with {
+				 	view: card_view, 
+				 	prefix: card_prefix, 
+				 	mod: card_mod, 
+				 	list: card_list
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "about" %} 
+	<section class="{{prefix}}panel  {{mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %} >
+		<div class="{{prefix}}container  container  {{mod}}">
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				<div data-grid-text>					
+					{% include "../common/page-header/tpl.twig" with {
+						prefix:"page-header__", 
+						mod:heading_mod,
+						level:heading_level, 
+						heading:heading
+					} %}
+					<div class="{{prefix}}text  {{mod}}">
+						{{note}}
+					</div>
+				</div>
+				<picture data-grid-img class="{{prefix}}preview  {{mod}}" data-aos="fade-right" data-aos-delay="600">
+					<img src="{{img}}" class="img-responsive" alt="">
+				</picture>
+				<div data-grid-sign class="{{prefix}}text  {{mod}}-sign">
+					<picture class="{{prefix}}preview  {{mod}}-sign">
+						<img src="{{sign_img}}" class="img-responsive" alt="">
+					</picture>
+					<p>{{sign_text}}</p> 	
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "sale" %}
+	<section class="{{prefix}}panel  {{mod}}"> 
+		<picture class="{{prefix}}preview  {{mod}}">
+			<img src="{{img}}" class="img-responsive" alt="">
+		</picture>
+		<picture class="{{prefix}}preview  {{mod}}-bg">
+			<img src="{{bg}}" class="img-responsive" alt="">
+		</picture>
+		<div class="{{prefix}}container  container  {{mod}}">
+			<div class="{{prefix}}inner  {{mod}}">
+				{% include "../common/page-header/tpl.twig" with {
+					prefix:"page-header__", 
+					mod:heading_mod,
+					level:heading_level, 
+					heading:heading
+				} %}
+				{% include "../common/form/form.twig" with {
+					view: 			"sale", 
+					prefix:			"form__",
+					mod:			"is--form-sale", 
+					color:			"", 
+					ID: 			"fb_sale",  
+				} %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "reviews" %}
+	<section class="{{prefix}}panel  {{mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %} >
+		<div class="{{prefix}}container  container  {{mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			<div class="{{prefix}}slick  {{mod}}" data-slick-reviews>
+				{% include "../common/card/card.twig" with {
+				 	view: card_view, 
+				 	prefix: card_prefix, 
+				 	mod: card_mod, 
+				 	list: card_list
+				} %}
+				<div class="slick-count"></div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "seo" %}
+	<section class="{{prefix}}panel  {{mod}}" style="background-image: url({{bg1}}), url({{bg2}})">
+		<div class="{{prefix}}container  container  {{mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_sm_mod,
+				level:heading_sm_level, 
+				heading:heading_sm
+			} %}
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../common/card/card.twig" with {
+				 	view: card_view, 
+				 	prefix: card_prefix, 
+				 	mod: card_mod, 
+				 	list: card_list
+				} %}
+				<hr data-grid-hr>
+				<picture data-grid-prevl class="{{prefix}}preview  {{mod}}">
+					<img src="{{img1}}" class="img-responsive" alt="">
+				</picture>
+
+				<div data-grid-textr class="{{prefix}}text  {{mod}}">{{note1}}</div>
+
+				<hr data-grid-hr class="is--bottom">
+
+				<div data-grid-textl class="{{prefix}}text  {{mod}}">{{note2}}</div>
+
+				<picture data-grid-prevr class="{{prefix}}preview  {{mod}}">
+					<img src="{{img2}}" class="img-responsive" alt="">
+				</picture>
+
+			</div>
+		</div>
+	</section>
+{% endif %}

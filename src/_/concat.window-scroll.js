@@ -1,0 +1,1 @@
+var scrolled=$(window).scrollTop(),navbar=$(".navbar__block");200<scrolled?navbar.addClass("is--opacity"):navbar.removeClass("is--opacity"),350<scrolled?navbar.addClass("is--fixed"):navbar.removeClass("is--fixed"),450<scrolled?navbar.addClass("is--scroll"):navbar.removeClass("is--scroll");

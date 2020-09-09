@@ -1,0 +1,10 @@
+{% if view == "google" %}	
+<div class="{{prefix}}block  {{mod}}  {{group}}">
+	<div class="{{prefix}}map  {{mod}}  {{group}}" id="map-google" data-map='{"center" : {{center_coord}},"zoom" : {{zoom}}, "placemarks" : [{"coord" : {{point_coord}}, "title": "{{point_heading}}"}]}'></div>
+</div>
+{% endif %}
+{% if view == "2gis" %}	
+<div class="{{prefix}}block  {{mod}}  {{group}}">
+	<div class="{{prefix}}map  {{mod}}  {{group}}" id="{{id}}" data-map='{"center" : {{center_coord}},"zoom" : {{zoom}}{% if objects %},"objects":[{% for value in objects %}{"coord" : [{{value.coord}}],"title": "{{value.name}}","label": "{{value.label}}","link": "{{value.link}}","preview": "{{value.preview}}"}{% if loop.last != true %},{% endif %}{% endfor %}]{% endif %}{% if pointer %},"placemarks" : [{% for value in pointer %}{"coord" : [{{value.point_coord}}],"title": "{{value.point_heading}}"}{% if loop.last != true %},{% endif %}{% endfor %}]{% endif %}}'></div>
+</div>
+{% endif %}

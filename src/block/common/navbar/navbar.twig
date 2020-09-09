@@ -1,0 +1,105 @@
+<nav class="{{navbar_prefix}}block  {{navbar_mod}}">
+	<div class="{{navbar_prefix}}header">
+		<div class="{{navbar_prefix}}header-row row">
+			<div class="{{navbar_prefix}}header-cols cols  is--logotip">
+				<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+					<img src="{{path.img}}/default/logotip-h.png" class="img-responsive" alt="">
+				</a>
+			</div>
+			<div class="{{navbar_prefix}}header-cols cols  is--hamb">
+				<button class="{{navbar_prefix}}hamburger" data-name="Меню" data-hamburger>
+					<span class="{{navbar_prefix}}hamburger-icon">
+						<span class="{{navbar_prefix}}hamburger-line  is--left"></span>
+						<span class="{{navbar_prefix}}hamburger-line  is--center"></span>
+						<span class="{{navbar_prefix}}hamburger-line  is--right"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="{{navbar_prefix}}collapse" >
+		<div class="{{navbar_prefix}}collapse-inner">
+			<div class="{{navbar_prefix}}container container  is--collapse">
+				<div class="{{navbar_prefix}}collapse-row">
+					<div class="{{navbar_prefix}}collapse-cols  is--logotip">
+						<a class="{{navbar_prefix}}logotip" href="{{page.index}}">
+							<img src="{{path.img}}/default/logotip.png" class="img-responsive  is--full" alt="">
+							<img src="{{path.img}}/default/logotip-xs.png" class="img-responsive  is--xs" alt="">
+						</a>
+					</div>
+					<div class="{{navbar_prefix}}collapse-cols  is--navbar">
+						<ul class="{{navbar_prefix}}nav">
+							{% include "item.twig" with {
+								prefix:navbar_prefix, 
+								mod:"",
+								list : [
+									{
+										"name":"Главная", 
+										"link":page.index, 
+										"mod":""
+									},
+									{
+										"name":"О салоне", 
+										"link":page.about, 
+										"mod":""
+									},
+									{
+										"name":"Услуги", 
+										"link":page.services, 
+										"mod":""
+									},
+									{
+										"name":"Акции", 
+										"link":page.action, 
+										"mod":""
+									},
+									{
+										"name":"Мастера", 
+										"link":page.team, 
+										"mod":""
+									},
+									{
+										"name":"Фото", 
+										"link":page.gallery, 
+										"mod":""
+									},
+									{
+										"name":"Отзывы", 
+										"link":page.reviews, 
+										"mod":""
+									},
+									{
+										"name":"Контакты", 
+										"link":page.contacts, 
+										"mod":""
+									},
+								]
+							} %}
+						</ul>
+					</div>	
+					<div class="{{navbar_prefix}}collapse-cols  is--phone">
+						<p class="{{navbar_prefix}}phone">
+							<a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a>
+						</p>	
+						<p class="{{navbar_prefix}}phone">
+							<a href="tel:{{contacts.phone2_tel}}">{{contacts.phone2}}</a>
+						</p>	
+						<p class="{{navbar_prefix}}phone">{{contacts.clock}}</p>	
+						{% include "../social/tpl.twig" with {
+							prefix:"social__", 
+							attr:"", 
+							mod:"is--navbar", 
+							list: [
+								{"name":"soc-inst", "link":soc.inst},
+								{"name":"soc-ok", "link":soc.ok},
+								{"name":"soc-fb", "link":soc.fb},
+								{"name":"soc-vk", "link":soc.vk}
+							]
+						} %} 
+						<a href="#" class="btn__item">запись онлайн</a>
+					</div>						   
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
