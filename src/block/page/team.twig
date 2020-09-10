@@ -1,12 +1,20 @@
 {% if view == "page" %}
-	<section class="{{prefix}}panel  {{mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+	<section class="{{prefix}}panel  {{mod}}" style="background-image: url({{bg_left}}), url({{bg_right}}), url({{bg_bottom}})">
 		<div class="{{prefix}}container  container  {{mod}}">
 			{% include "../common/page-header/tpl.twig" with {
 				prefix:"page-header__", 
 				mod:heading_mod,
 				level:heading_level, 
 				heading:heading
-			} %}
+			} %}			
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../common/card/card.twig" with {
+				 	view: card_view, 
+				 	prefix: card_prefix, 
+				 	mod: card_mod, 
+				 	list: card_list
+				} %}
+			</div>
 		</div>
 	</section>
 {% endif %}

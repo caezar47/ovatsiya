@@ -37,3 +37,20 @@
 	</div> 
 	{% endfor %}
 {% endif %} 
+
+{% if view == "team" %}
+	{% for value in list %}		
+	<div class="{{prefix}}item  {{mod}}">
+		<picture class="{{prefix}}wrap  {{mod}}">
+			<a href="{{value.link}}" class="{{prefix}}preview  {{mod}}">	
+				<img src="{{value.preview}}" class="img-responsive" alt="{{value.heading}}">
+			</a>
+		</picture>
+		<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
+		<p class="{{prefix}}position  {{mod}}">{{value.position}}</p> 
+		{% if value.order == "true" %}
+		<a href="#" class="btn__item">запись онлайн</a>
+		{% endif %}
+	</div> 
+	{% endfor %}
+{% endif %}
