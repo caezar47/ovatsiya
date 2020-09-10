@@ -252,22 +252,27 @@
                 card_view: "adv",
                 card_prefix: "card__",
                 card_mod: "is--adv",
+                card_aos: "fade-up",
                 card_list: [
                     {   
                         "heading":"профессионализм", 
                         "preview":[path.img,"/default/adv-item1.png"].join(''),
+                        "delay":"100",
                     },
                     {   
                         "heading":"доброжелательное отношение к клиентам", 
                         "preview":[path.img,"/default/adv-item2.png"].join(''),
+                        "delay":"300",
                     },
                     {   
                         "heading":"безопасность", 
                         "preview":[path.img,"/default/adv-item3.png"].join(''),
+                        "delay":"600",
                     },
                     {   
                         "heading":"справедливые цены", 
                         "preview":[path.img,"/default/adv-item4.png"].join(''),
+                        "delay":"900",
                     },
                 ]
             } %}
@@ -275,7 +280,7 @@
 
         {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
-        {% include "../block/common/modals/include.twig"%}
+        {# {% include "../block/common/modals/include.twig"%} #}
         {% include "../block/common/script/script.twig" with {
             aos: 'view'
         }%}

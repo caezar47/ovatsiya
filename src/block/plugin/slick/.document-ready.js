@@ -12,24 +12,28 @@ $(function() {
           var i = (currentSlide ? currentSlide : 0) + 1;
           $(this).find(count).html('<span>'+i + '</span><span>/</span><span>' + slick.slideCount+'</span>');
     });
-	reviews.slick({
-		slide: '.card__item',
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		arrows: true,
-		dots: dots,
-		infinite: true,
-		centerMode: true,
-		variableWidth: true,
-		prevArrow: prevArrow,
-		nextArrow: nextArrow,
-		responsive: [
-		    {
-				breakpoint: 767,
-				settings: {
-					slidesToShow: 1,
-				}
-		    }
-		]
-	});
+	//function slickCatalog() {
+		reviews.slick({
+			slide: '.card__item.is--reviews',
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			arrows: true,
+			dots: dots,
+			infinite: true,
+			centerMode: true,
+			variableWidth: true,
+			prevArrow: prevArrow,
+			nextArrow: nextArrow,
+			responsive: [
+			    {
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+					}
+			    }
+			]
+		});
+	//	}
+	//slickCatalog();
+	AOS.refresh();
 }); 

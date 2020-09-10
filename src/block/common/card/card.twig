@@ -29,11 +29,11 @@
 
 {% if view == "adv" %}
 	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}">
+	<div class="{{prefix}}item  {{mod}}" {% if card_aos %}data-aos="{{card_aos}}" {% if value.delay %}data-aos-delay="{{value.delay}}"{% endif %}{% endif %}>
 		<picture class="{{prefix}}preview  {{mod}}">
 			<img src="{{value.preview}}" class="img-responsive" alt="{{value.heading}}">
 		</picture>
 		<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p> 
 	</div> 
 	{% endfor %}
-{% endif %}
+{% endif %} 
