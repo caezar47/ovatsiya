@@ -62,10 +62,15 @@
 					background-size: 21vw auto, auto;
 				}
 			}
-			&-team{
-				background-position: -.5% 100%,100.5% 40%,83.8% 100.5%;
+			&-services{
+				background-position: -71.9% -78%,178% 114%,83.8% 100.5%;
 				background-repeat: no-repeat, no-repeat, no-repeat;
-				background-size: 20.4vw auto, 15.8vw auto, 7vw auto;
+				background-size: 51.85vw auto, 51.85vw auto, 7vw auto;
+			}
+			&-team{
+				background-position: -67.5% 130%,100.5% 40%,83.8% 100.5%;
+				background-repeat: no-repeat, no-repeat, no-repeat;
+				background-size: 51.85vw auto, 15.8vw auto, 7vw auto;
 			}
 			&-reviews{
 				background-position: -.5% 100%,83.8% 100.5%;
@@ -260,6 +265,21 @@
 				.media-breakpoint-up(@lg; {
 					grid-gap: 3.8vw 10px; 
 					grid-template-columns: repeat(3, 1fr);
+				});
+			}
+			&-services{
+				.media-breakpoint-up(@sm; {
+					grid-template-columns: repeat(2, 1fr);
+				});
+				.media-breakpoint-up(@md; {
+					grid-template-columns: repeat(3, 1fr);
+				});
+				.media-breakpoint-up(@lg; {
+					grid-template-columns: repeat(4, 1fr);
+				});
+				.media-breakpoint-up(@xl; {
+					grid-gap: 40px 0;
+					margin: 0 -15px;
 				});
 			}
 			&-reviews{

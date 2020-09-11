@@ -35,9 +35,8 @@
 	"page":{
 		"index":"./",
 		"about":"./about.html",
-		"structure":"./structure.html",
 		"services":"./services.html",
-		"action":"./action.html",
+		"services_card":"./services-card.html",
 		"action":"./action.html",
 		"team":"./team.html",
 		"gallery":"./gallery.html",

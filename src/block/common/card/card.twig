@@ -6,8 +6,15 @@
 				<img src="{{value.preview}}" class="img-responsive" alt="{{value.heading}}">
 			</a>
 		</picture>
-		<p class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></p> 
-		<a href="#" class="btn__item">запись онлайн</a>
+		<p class="{{prefix}}heading  {{mod}}"><a href="{{value.link}}">{{value.heading}}</a></p>
+		{% if value.cost %}
+		<p class="{{prefix}}cost  {{mod}}">{{value.cost}}</p>
+		{% endif %}
+		{% if value.modal %}
+			<button type="button" data-toggle="modal" data-target="#{{value.modal}}" class="btn__item">запись онлайн</button>
+		{% else %} 
+			<a href="{{value.link}}" class="btn__item">подробнее</a>
+		{% endif %} 
 	</div> 
 	{% endfor %}
 {% endif %}
