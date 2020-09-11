@@ -56,7 +56,7 @@
 		<p class="{{prefix}}heading  {{mod}}">{{value.name}}</p>
 		<p class="{{prefix}}position  {{mod}}">{{value.position}}</p> 
 		{% if value.order == "true" %}
-		<a href="#" class="btn__item">запись онлайн</a>
+		<button type="button" data-toggle="modal" data-target="#modal-order" class="btn__item">запись онлайн</button>
 		{% endif %}
 	</div> 
 	{% endfor %}
