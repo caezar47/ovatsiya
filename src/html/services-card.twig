@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
     <head>  
-        {% include "../block/common/head/head.twig" with {title:"Акции"}  %}
+        {% include "../block/common/head/head.twig" with {title:"Услуги"}  %}
     </head>
     <body>
         {% include "../block/common/navbar/navbar.twig" with {
             navbar_prefix:"navbar__", 
             navbar_mod:"is--scroll",
-            active:page.action,
+            active:page.services,
         } %}
 
         <main class="{{prefix.section}}wrap">
-            {% include "../block/page/action.twig" with {
-                view:"page", 
+            {% include "../block/page/services.twig" with {
+                view:"card", 
                 prefix:prefix.section, 
-                mod:"is--page-action", 
+                mod:"is--page-services", 
                 heading_group:"", 
-                heading_mod:"is--h2  is--default", 
+                heading_mod:"is--h2  is--page-services", 
                 heading_level:"h1", 
-                heading:"Акции"
+                heading:"Услуги", 
+
+                bg_left:[path.img,"/default/bg-page.png"].join(''),
+                bg_right:[path.img,"/default/bg-page.png"].join(''),
+                bg_bottom:[path.img,"/default/bg-team-bottom.png"].join('')
             } %} 
         </main>
 

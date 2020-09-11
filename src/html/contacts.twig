@@ -28,7 +28,7 @@
                 fbg_left:[path.img,"/default/bg-page.png"].join(''),
                 fbg_bottom:[path.img,"/default/bg-form-bottom.png"].join(''),
 
-                agreement_mod:"is--page-index-sale-agree", 
+                agreement_mod:"is--form-agreement", 
                 agreement_level:"p", 
                 agreement:"* Отправляя данную форму, Вы даете согласие на обработку персональных данных",
             } %} 
@@ -36,7 +36,7 @@
 
         {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
-        {# {% include "../block/common/modals/include.twig"%} #}
+        {% include "../block/common/modals/include.twig"%}
         {% include "../block/common/script/script.twig" with {
             aos: 'view'
         }%}

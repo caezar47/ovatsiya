@@ -18,3 +18,15 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "card" %}
+	<section class="{{prefix}}panel  {{mod}}" {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+		<div class="{{prefix}}container  container  {{mod}}">
+			{% include "../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:heading_mod,
+				level:heading_level, 
+				heading:heading
+			} %}
+		</div>
+	</section>
+{% endif %}

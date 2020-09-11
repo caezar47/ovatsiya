@@ -60,11 +60,11 @@
 					&-form{
 						margin-bottom: 18px;
 					}
-					&-agree{
+					/*&-agree{
 						font-size: 0.750em;
 						line-height: 170%;
 						margin-bottom: 18px;
-					}
+					}*/
 				}
 				&-reviews{
 					margin-bottom: 30px;
@@ -117,7 +117,29 @@
 					font-weight: 700;
 					color: @primary;
 				}
+			}
+			&-agreement{				
+				font-size: 0.750em;
+				line-height: 170%;
+				margin-bottom: 18px;
 			}			
+		}
+		&.is--modal{
+			&{
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				margin-bottom: 10px;
+				span{
+					color: @primary;
+					font-size: 140%;
+					font-weight: 700;
+				}
+			}
+			&-text{
+				font-size: 1.125em;
+				font-weight: 600;
+				margin-bottom: 20px;
+			}
 		}
 	}
 }

@@ -1,0 +1,15 @@
+{% include "tpl.twig" with {
+	prefix:			"modal__", 
+	mod:			"", 
+	ID: 			"modal-order",
+    bg: 			[path.img,"/default/bg-index-sale.png"].join(''),
+	heading:		"запись <span>онлайн</span>", 
+	heading_level:	"h4", 
+	heading_mod:	"is--h1  is--modal",
+	note:			"Оставьте свой номер телефона и мы перезвоним.", 
+	note_level:		"p", 
+	note_mod:		"is--modal-text",
+	agreement:       '* Отправляя данную форму, Вы даете согласие на обработку персональных данных', 
+    agreement_level:    "p", 
+    agreement_mod:      "is--form-agreement"
+} %}

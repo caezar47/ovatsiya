@@ -132,7 +132,7 @@
 </svg>		</a>
 	</li>
 	</ul> 
-						<a href="#" class="btn__item">запись онлайн</a>
+						<button type="button" data-toggle="modal" data-target="#modal-order" class="btn__item">запись онлайн</button>
 					</div>						   
 				</div>
 			</div>
@@ -305,8 +305,51 @@
 		</div>	
 	</div>
 </footer>
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <div class="modal__block modals  fade  " id="modal-order" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal__dialog  ">
+		<div class="modal__body  " >
+			<div class="modal__bg  " style="background-image: url(./img/default/bg-index-sale.png)"></div>
+			<button type="button" class="modal__btn-close  modal-close" data-dismiss="modal" aria-hidden="true"></button>
+			<div class="modal__content  ">
+					
+	<h4 class="page-header__heading  is--h1  is--modal  " >запись <span>онлайн</span></h4>
+	
+					
+	<p class="page-header__heading  is--modal-text  " >Оставьте свой номер телефона и мы перезвоним.</p>
+	
+										<form action="#" data-form-validation class="form__panel  is--form-modal">
+		<div class="form__row  grid__row  is--form-modal">
+					
+	<p class="form__item  is--form-modal  "  >
+		<input type="text" class="form__control  validate[required, custom[onlyLetterSp]]  is--form-modal  "  placeholder="Имя"  id="fm_order[fio]" name="f[Имя]">
+				
+	</p>
+		
+	<p class="form__item  is--form-modal  "  >
+		<input type="tel" class="form__control  validate[required, custom[phone]]  is--form-modal  "  placeholder="Телефон"  id="fm_order[tel]" name="f[Телефон]">
+				
+	</p>
+	
+
+
+
+
+
+
+
+
+
+
+		</div>
+			
+	<p class="page-header__heading  is--form-agreement  " >* Отправляя данную форму, Вы даете согласие на обработку персональных данных</p>
+		<button type="submit" class="btn__item  is--size-xl">запись онлайн</button>	
+	</form>
+					
+			</div> 
+		</div>
+	</div>
+</div>        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

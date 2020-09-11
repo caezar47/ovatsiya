@@ -36,7 +36,7 @@
                 fheading_sm_level:"p", 
                 fheading_sm:"Заполните форму ниже.",
 
-                agreement_mod:"is--page-index-sale-agree", 
+                agreement_mod:"is--form-agreement", 
                 agreement_level:"p", 
                 agreement:"* Отправляя данную форму, Вы даете согласие на обработку персональных данных",
 
@@ -122,7 +122,7 @@
 
         {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
-        {# {% include "../block/common/modals/include.twig"%} #}
+        {% include "../block/common/modals/include.twig"%}
         {% include "../block/common/script/script.twig" with {
             aos: 'view'
         }%}

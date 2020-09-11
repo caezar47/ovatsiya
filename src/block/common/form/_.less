@@ -115,6 +115,13 @@
 					}
 				});
 			}
+			&-modal{
+				grid-gap: 10px 50px;
+				margin-bottom: 18px;
+				.media-breakpoint-up(@md; {
+					grid-template-columns: repeat(2, 1fr);					
+				});
+			}
 		}
 	}
 	&item{
