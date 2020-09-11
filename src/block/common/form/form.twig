@@ -1,3 +1,51 @@
+{% if view=="feedback" %}
+	<form action="#" data-form-validation class="{{prefix}}panel  {{mod}}" style="background-image: url({{fbg_left}}), url({{fbg_bottom}})">
+		<div class="{{prefix}}container container  {{mod}}">
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:fheading_mod, 
+				level:fheading_level, 
+				heading:fheading
+			} %}
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "elem-tpl.twig" with {view: "input", prefix:prefix, mod:mod, color:color, list: [
+					{
+						"type":"text",
+						"id":"fio",
+						"form_id":ID,
+						"validate":"validate[required, custom[onlyLetterSp]]",
+						"name":"Имя",
+						"placeholder":"Имя",
+					},
+					{
+						"type":"tel",
+						"id":"tel",
+						"form_id":ID,
+						"validate":"validate[required, custom[phone]]",
+						"name":"Телефон",
+						"placeholder":"Телефон",
+					},
+				]} %}
+				{% include "elem-tpl.twig" with {
+					view: "textarea", 
+					prefix:prefix, 
+					mod:mod, 
+					color:color,
+					form_id:ID,
+					id:"text",
+					validate:"validate[required]",
+					placeholder: 'Сообщение' 
+				} %}
+			</div>
+			{% include "../../common/page-header/tpl.twig" with {
+				prefix:"page-header__", 
+				mod:agreement_mod, 
+				level:agreement_level, 
+				heading:agreement} %}
+			<button type="submit" class="btn__item  is--size-xl">отправить</button>	
+		</div>
+	</form>
+{% endif %}
 {% if view=="sale" %}
 	<form action="#" data-form-validation class="{{prefix}}panel  {{mod}}">
 		{% include "../../common/page-header/tpl.twig" with {

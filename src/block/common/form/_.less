@@ -34,6 +34,16 @@
 				    margin-right: -20px;
 				});	
 			}
+			&-feedback{
+				background-color: #f3f7fa;
+				margin: 0;
+				background-position: -65% 13%,88.5% 270.5%;
+				background-repeat: no-repeat, no-repeat;
+				background-size: 51.85vw auto, 29.08vw auto;
+				.btn__item{
+					padding: 14px 60px;
+				}
+			}
 		}
 	}
 	&container{
@@ -50,6 +60,16 @@
 					padding: 2.5vw 4.4vw 3.7vw;
 				});
 			}
+			&-feedback{
+				max-width: 1035px;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				.media-breakpoint-up(@lg; {
+					padding-top: 3.1vw;
+					padding-bottom: 3.1vw;
+				});
+
+			}
 		}
 	}
 	&row{
@@ -62,6 +82,23 @@
 				});
 			}
 			&-reviews{
+				max-width: 700px;
+				grid-gap: 10px 30px;
+				margin-bottom: 18px;
+				.media-breakpoint-up(@md; {
+					grid-template-columns: 0.72fr 1.28fr;
+					& > *{
+						&:nth-child(3){
+							grid-column: 2;
+							grid-row: ~"1/3";
+							textarea{
+								height: 100%;
+							}
+						}
+					}
+				});
+			}
+			&-feedback{
 				max-width: 700px;
 				grid-gap: 10px 30px;
 				margin-bottom: 18px;

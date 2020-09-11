@@ -7,6 +7,90 @@
 				level:heading_level, 
 				heading:heading
 			} %}
+			<div class="{{prefix}}row  grid__row  {{mod}}">
+				{% include "../common/continfo/tpl.twig" with {
+					view: "", 
+					prefix:"continfo__", 
+					mod:content_mod, 
+					list:[
+						{ 
+							"sublist" :[
+								{
+									"mod":"is--address", 
+									"name":contacts.address_full, 
+									"tag":"p", 
+								},
+								{
+									"mod":"is--phone", 
+									"name":contacts.phone, 
+									"href":contacts.phone_tel, 
+									"tag":"a", 
+									"target":"tel:", 
+								},
+								{
+									"mod":"is--phone",
+									"name":contacts.phone2, 
+									"href":contacts.phone2_tel, 
+									"tag":"a", 
+									"target":"tel:",
+								}
+							]
+						},
+						{ 
+							"sublist" :[
+								{
+									"mod":"is--clock", 
+									"label":'Время работы', 
+									"name":contacts.clock, 
+									"tag":"p",   
+								},
+								{
+									"mod":"is--email",
+									"label":'E-mail:', 
+									"name":contacts.email, 
+									"href":contacts.email, 
+									"tag":"a", 
+									"target":"mailto:", 
+								}
+							]
+						},
+						{
+							"label":'Реквизиты', 
+							"sublist" :[
+								{
+									"mod":"is--prop",
+									"name":contacts.ip, 
+									"tag":"p", 
+								},
+								{
+									"mod":"is--prop",
+									"name":contacts.inn, 
+									"tag":"p", 
+								},
+								{
+									"mod":"is--prop",
+									"name":contacts.ogrn, 
+									"tag":"p", 
+								}
+							]
+						},
+				]} %}
+			</div>
 		</div>
+		<div class="{{prefix}}row  grid__row  {{mod}}-map">
+			<div>
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=WbsIsVOBJIllCHtb0OiC9GrtSNfjPhMk&amp;width=100%&amp;height=475&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+			</div>
+			<div>
+				<script src="//panoramas.api-maps.yandex.ru/embed/1.x/?lang=ru&ll=37.64686885%2C54.20187604&ost=dir%3A161.3364303923613%2C-1.1213186975519214~span%3A115.88628275586154%2C52.945545434084245&size=900%2C475&l=stv"></script>
+			</div>
+		</div>
+		{% include "../common/form/form.twig" with {
+			view: 			"feedback", 
+			prefix:			"form__",
+			mod:			"is--form-feedback", 
+			color:			"", 
+			ID: 			"fb_feedback",  
+		} %}
 	</section>
 {% endif %}

@@ -129,6 +129,9 @@
 					});
 				}
 			}
+			&-contacts{
+				padding-bottom: 55px;
+			}
 		}
 	}	  
 	&inner{
@@ -291,6 +294,25 @@
 					grid-template-columns: repeat(3, 1fr);
 					& > *:nth-child(3n + 2){transform: translateY(-60px);}
 				});
+			}
+			&-contacts{
+				.media-breakpoint-up(@md; {
+					grid-template-columns: repeat(2, 1fr);
+				});
+				.media-breakpoint-up(@lg; {
+					grid-template-columns: repeat(3, 1fr);
+				});
+				&-map{
+					border-top: 10px solid @primary;
+					grid-gap: 0;
+					.media-breakpoint-up(@md; {
+						grid-template-columns: 0.9fr 1.1fr;
+					});
+					iframe{
+						width: 100%;
+					}
+
+				}
 			}
 		}
 	}			  

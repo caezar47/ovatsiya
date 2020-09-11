@@ -1,0 +1,44 @@
+.continfo__{
+	&group{
+		
+	}
+	&card{
+		display: flex;
+		flex-direction: column;
+		
+	}
+	&icon{
+		
+	}
+	&label{
+		font-weight: 700;
+		margin-bottom: 5px;
+		&.is--email{
+			display: inline;
+		}
+	}
+	&name{
+		font-size: 0.938em;
+		line-height: 130%;
+		&.is--address{
+			margin-bottom: 30px;
+		}
+		&.is--phone{
+			font-weight: 700;
+			font-size: 1.155em;
+		}
+		&.is--email{
+			margin-top: auto;
+			padding-top: 10px;
+		}
+		&.is--prop{
+			margin-bottom: 6px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		a{
+			color: @default;
+		}
+	}
+}
