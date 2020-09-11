@@ -72,13 +72,20 @@
 			}
 		}
 		&.is--reviews{
-			width: 100%;			
-			max-width: 380px;
-			.media-breakpoint-up(@md; {
-				max-width: 400px;
-			});
-			&.slick-current{
-				margin-top: -60px;
+			&-index{
+				width: 100%;			
+				max-width: 380px;
+				.media-breakpoint-up(@md; {
+					max-width: 400px;
+				});
+				&.slick-current{
+					margin-top: -60px;
+				}
+			}
+			&-page{
+				display: flex;
+				flex-direction: column;
+				height: 100%;
 			}
 		}
 		&.is--adv{
@@ -175,10 +182,21 @@
 			margin-bottom: 28px;			
 		}
 		&.is--reviews{
-			background-color: @white;
-			border: 1px solid #dbd6d7;
-			margin-top: -40px;
-			padding: 47px 27px 37px;
+			&-index{
+				background-color: @white;
+				border: 1px solid #dbd6d7;
+				margin-top: -40px;
+				padding: 47px 27px 37px;
+			}
+			&-page{
+				background-color: #f3f7f9;
+				margin-top: -40px;
+				padding: 49px 32px 35px;
+				flex: 1 1 0;
+				.media-breakpoint-up(@lg; {
+					padding-bottom: 4vw;
+				});
+			}
 		}
 		&.is--team{
 			display: block;
@@ -217,20 +235,24 @@
 			}
 		}
 		&.is--reviews{
-			border: 4px solid @primary;
-			width: 108px;
-			height: 108px;
-			border-radius: 50%;
-			overflow: hidden;
-			padding: 6px;
-			background-color: @white;
-			margin: 0 auto;
-			img{
+			&-index,
+			&-page{
+				border: 4px solid @primary;
+				width: 108px;
+				height: 108px;
+				min-height: 108px;
 				border-radius: 50%;
-				width: 100%;
-				height: 100%;
-				object-position: center;
-				object-fit: cover;
+				overflow: hidden;
+				padding: 6px;
+				background-color: @white;
+				margin: 0 auto;
+				img{
+					border-radius: 50%;
+					width: 100%;
+					height: 100%;
+					object-position: center;
+					object-fit: cover;
+				}
 			}
 		}
 		&.is--adv{
@@ -267,10 +289,13 @@
 			}
 		}
 		&.is--reviews{
-			.heading5();
-			font-weight: 700;
-			text-align: center;
-			margin-bottom: 22px;
+			&-index,
+			&-page{
+				.heading5();
+				font-weight: 700;
+				text-align: center;
+				margin-bottom: 22px;
+			}
 		}
 		&.is--adv{
 			.heading7();
@@ -295,22 +320,36 @@
 	}
 	&note{
 		&.is--reviews{
-			font-size: 0.750em;
-			line-height: 150%;
-			height: 180px;
-   			overflow: hidden;
+			&-index{
+				font-size: 0.750em;
+				line-height: 150%;
+				height: 180px;
+	   			overflow: hidden;
+			}
+			&-page{
+				font-size: 0.750em;
+				line-height: 150%;
+				p, div{
+					margin-bottom: 18px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
 		}
 	}
 	&link{
 		&.is--reviews{
-			margin-top: 30px;
-			display: inline-block;
-			color: @default;
-			font-size: 0.813em;
-			font-weight: 500;
-			letter-spacing: 1px;
-			&:hover{
-				color: @primary;
+			&-index{
+				margin-top: 30px;
+				display: inline-block;
+				color: @default;
+				font-size: 0.813em;
+				font-weight: 500;
+				letter-spacing: 1px;
+				&:hover{
+					color: @primary;
+				}
 			}
 		}
 	}

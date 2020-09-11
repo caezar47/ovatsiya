@@ -14,14 +14,14 @@
 
 {% if view == "reviews" %}
 	{% for value in list %}		
-	<div class="{{prefix}}item  {{mod}}">
+	<div class="{{prefix}}item  {{mod}}" id="card{{loop.index}}">
 		<picture class="{{prefix}}preview  {{mod}}">
 			<img src="{{value.preview}}" class="img-responsive" alt="{{value.heading}}">
 		</picture>
 		<div class="{{prefix}}wrap  {{mod}}">
 			<p class="{{prefix}}heading  {{mod}}">{{value.heading}}</p> 
 			<div class="{{prefix}}note  {{mod}}">{{value.note}}</div> 
-			{% if value.link %}<a href="{{value.link}}" class="{{prefix}}link  {{mod}}">подробнее →</a>{% endif %}
+			{% if value.link %}<a href="{{value.link}}#card{{loop.index}}" class="{{prefix}}link  {{mod}}">подробнее →</a>{% endif %}
 		</div> 
 	</div> 
 	{% endfor %}

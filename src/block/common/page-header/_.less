@@ -79,6 +79,32 @@
 					}
 				}
 			}
+			&-reviews{
+				margin-bottom: 30px;
+				.media-breakpoint-up(@lg; {
+					margin-bottom: 2.3vw;
+				});
+			}
+		}
+		&.is--form{
+			&-reviews{
+				font-size: 1.6em;
+				line-height: 120%;
+				font-weight: 500;
+				margin-bottom: 8px;
+				.media-breakpoint-up(@md; {
+					font-size: 1.875em;
+					
+				});
+				span{
+					font-weight: 700;
+					color: @primary;
+				}
+				&-sm{
+					font-weight: 500;
+					margin-bottom: 20px;
+				}
+			}			
 		}
 	}
 }

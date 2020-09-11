@@ -7,6 +7,11 @@
 	</p>
 	{% endfor %}
 {% endif %}
+{% if view == "textarea" %}	
+	<p class="{{prefix}}item  {{mod}}  {{mod_elem}}">
+		<textarea class="{{prefix}}control form-control {{validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]" placeholder="{{placeholder}}"></textarea>
+	</p>
+{% endif %}
 
 {% if view == "file" %}
 	<p class="{{prefix}}item  {{mod}}">
@@ -68,11 +73,6 @@
 	</div>
 {% endif %}
 
-{% if view == "textarea" %}	
-	<div class="{{prefix}}item  {{mod}}  {{mod_elem}}">
-		<textarea class="{{prefix}}control form-control {{validate}}  {{mod}}  {{color}}" id="{{form_id}}[{{id}}]" name="f[{{name}}]" placeholder="{{placeholder}}"></textarea>
-	</div>
-{% endif %}
 
 
 

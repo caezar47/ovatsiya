@@ -67,6 +67,11 @@
 				background-repeat: no-repeat, no-repeat, no-repeat;
 				background-size: 20.4vw auto, 15.8vw auto, 7vw auto;
 			}
+			&-reviews{
+				background-position: -.5% 100%,83.8% 100.5%;
+				background-repeat: no-repeat, no-repeat;
+				background-size: 20.4vw auto, 7vw auto;
+			}
 		}
 	}
 	&container{	
@@ -255,6 +260,16 @@
 				.media-breakpoint-up(@lg; {
 					grid-gap: 3.8vw 10px; 
 					grid-template-columns: repeat(3, 1fr);
+				});
+			}
+			&-reviews{
+				.media-breakpoint-up(@md; {
+					grid-template-columns: repeat(2, 1fr);
+				});
+				.media-breakpoint-up(@xl; {
+					grid-gap: 70px 30px;
+					grid-template-columns: repeat(3, 1fr);
+					& > *:nth-child(3n + 2){transform: translateY(-60px);}
 				});
 			}
 		}

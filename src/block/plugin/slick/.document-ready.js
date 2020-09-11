@@ -14,7 +14,7 @@ $(function() {
     });
 	//function slickCatalog() {
 		reviews.slick({
-			slide: '.card__item.is--reviews',
+			slide: '.card__item.is--reviews-index',
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			arrows: true,
