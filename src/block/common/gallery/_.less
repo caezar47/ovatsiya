@@ -46,4 +46,26 @@
 
 		}
 	}
+	&unit{
+		display: block;
+		margin-bottom: 10px;
+		&.is--center{
+			margin-top: 10px;
+		}
+		.media-breakpoint-up(@sm; {
+			max-width: 300px;		 	
+			&.is--left{
+				float: left;
+				margin-right: 20px;
+			}
+			&.is--right{
+				float: right;
+				margin-left: 20px;
+			}
+			&.is--center{
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}); 
+	}
 }
