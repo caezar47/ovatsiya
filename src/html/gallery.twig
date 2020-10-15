@@ -18,15 +18,66 @@
                 heading_group:"", 
                 heading_mod:"is--h2  is--default", 
                 heading_level:"h1", 
-                heading:"Фото"
+                heading:"Фото",
+                card_prefix: "gallery__",
+                card_list: [
+                    {"preview":[path.img,"/temp/gallery1.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery4.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery3.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery2.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery1.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery3.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery4.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery2.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery3.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery4.jpg"].join('')},
+                    {"preview":[path.img,"/temp/gallery1.jpg"].join('')},
+                ]
             } %} 
         </main>
 
         {% include "../block/common/footer/footer.twig" with {footer_prefix:"footer__"} %}
 
         {% include "../block/common/modals/include.twig"%}
+
         {% include "../block/common/script/script.twig" with {
             aos: 'view'
         }%}
+        <script>
+            var gallery = document.querySelector('#gallery');
+
+            var getVal = function (elem, style) { 
+                return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); 
+            };
+            var getHeight = function (item) { 
+                return item.querySelector('.gallery__preview').getBoundingClientRect().height; 
+            };
+            var resizeAll = function () {
+                var altura = getVal(gallery, 'grid-auto-rows');
+                var gap = getVal(gallery, 'grid-row-gap');
+                gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+                    var el = item;
+                    el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+                });
+            };
+            gallery.querySelectorAll('img').forEach(function (item) {    
+                if (item.complete) {
+                } else {
+                    item.addEventListener('load', function () {
+                        var altura = getVal(gallery, 'grid-auto-rows');
+                        var gap = getVal(gallery, 'grid-row-gap');
+                        var gitem = item.parentElement.parentElement;
+                        gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+                        item.classList.remove('byebye');
+                    });
+                }
+            });
+            window.addEventListener('resize', resizeAll);
+            gallery.querySelectorAll('.gallery__item').forEach(function (item) {
+                item.addEventListener('click', function () {        
+                    item.classList.toggle('full');        
+                });
+            });
+        </script>
     </body>
 </html> 

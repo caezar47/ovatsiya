@@ -1,5 +1,6 @@
 
 var form_panel=$("[data-form-validation]");form_panel.validationEngine("attach",{promptPosition:"bottomLeft",scroll:!1});var phone=$(".form__control[type='tel']");phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});var file=$(".form__file-input");file.on("change",function(l){$(this).siblings(".form__file-name").html($(this).val().replace(/.*(\/|\\)/,"")+"<small>Заменить файл</small>")});
+
 $("img").addClass("img-responsive");
 var modal_btn_show=$('[data-toggle="modal"]');modal_btn_show.on("click",function(t){var a=$(this).attr("data-target"),d=($(a).find("[data-type]"),$(this).attr("data-type"));$(a).find("[data-form-type]").attr({value:d})});
 var humb=$("[data-hamburger]"),collapse=$(".navbar__collapse"),html=$("html");humb.on("click",function(){$(this).toggleClass("is--active"),$(collapse).toggleClass("is--open"),$(html).toggleClass("is--open-navbar")}),$(document.body).on("click",function(a){0==$(a.target).closest(".navbar__container.is--collapse").length&&0==$(a.target).closest("[data-hamburger]").length&&(humb.removeClass("is--active"),$(html).removeClass("is--open-navbar"),$(collapse).removeClass("is--open"))});

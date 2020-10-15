@@ -1,0 +1,9 @@
+<div class="{{prefix}}panel" id="gallery">
+	{% for value in list %}		
+	<picture class="{{prefix}}item  {{mod}}">
+		<a href="{{value.preview}}" data-fancybox="gallery" class="{{prefix}}preview  {{mod}}">
+			<img src="{{value.preview}}" class="img-responsive" alt="">
+		</a>
+	</picture> 
+	{% endfor %}
+</div>

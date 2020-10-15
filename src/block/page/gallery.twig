@@ -7,6 +7,10 @@
 				level:heading_level, 
 				heading:heading
 			} %}
+			{% include "../common/gallery/card.twig" with {
+			 	prefix: card_prefix,
+			 	list: card_list
+			} %}
 		</div>
 	</section>
 {% endif %}
