@@ -19,6 +19,18 @@
 					"placeholder":"Телефон",
 				},
 			]} %}
+			{% include "elem-tpl.twig" with {
+				view: "textarea", 
+				prefix:prefix, 
+				mod:mod, 
+				mod_elem:"is--full", 
+				color:color,
+				form_id:ID,
+				id:"text",
+				validate:"validate[required]",
+				placeholder: 'Сообщение' 
+			} %}
+
 		</div>
 		{% include "../../common/page-header/tpl.twig" with {
 			prefix:"page-header__", 

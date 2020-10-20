@@ -43,41 +43,15 @@
         {% include "../block/common/script/script.twig" with {
             aos: 'view'
         }%}
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
         <script>
-            var gallery = document.querySelector('#gallery');
-
-            var getVal = function (elem, style) { 
-                return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); 
-            };
-            var getHeight = function (item) { 
-                return item.querySelector('.gallery__preview').getBoundingClientRect().height; 
-            };
-            var resizeAll = function () {
-                var altura = getVal(gallery, 'grid-auto-rows');
-                var gap = getVal(gallery, 'grid-row-gap');
-                gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-                    var el = item;
-                    el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
-                });
-            };
-            gallery.querySelectorAll('img').forEach(function (item) {    
-                if (item.complete) {
-                } else {
-                    item.addEventListener('load', function () {
-                        var altura = getVal(gallery, 'grid-auto-rows');
-                        var gap = getVal(gallery, 'grid-row-gap');
-                        var gitem = item.parentElement.parentElement;
-                        gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-                        item.classList.remove('byebye');
-                    });
-                }
+            var $grid = $('.gallery__panel').masonry({
+                itemSelector: '.gallery__item'
             });
-            window.addEventListener('resize', resizeAll);
-            gallery.querySelectorAll('.gallery__item').forEach(function (item) {
-                item.addEventListener('click', function () {        
-                    item.classList.toggle('full');        
-                });
+            $grid.imagesLoaded().progress( function() {
+              $grid.masonry('layout');
             });
         </script>
     </body>
-</html> 
+</html>

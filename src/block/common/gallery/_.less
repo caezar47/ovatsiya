@@ -1,6 +1,6 @@
 .gallery__{
 	&panel{
-		display: flex;
+		/*display: flex;
 		flex-wrap: wrap;
 
 		@supports (display: grid){			
@@ -14,10 +14,15 @@
 			.media-breakpoint-up(@md; {
 				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 			});
-		}
+		}*/
 	}
 	&item{
-		flex: 1 1 25%;
+		width: 48%;
+		margin: 1%;
+		.media-breakpoint-up(@md; {
+			width: 23%;
+		});
+		/*flex: 1 1 25%;
 		@supports (display: grid){			
 			display: block;
 			transition: grid-row-start 300ms linear;
@@ -27,7 +32,7 @@
 			&:hover{
 				transform: scale(1.025);
 			}
-		}
+		}*/
 	}
 	&preview{
 		display: block;

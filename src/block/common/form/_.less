@@ -119,7 +119,10 @@
 				grid-gap: 10px 50px;
 				margin-bottom: 18px;
 				.media-breakpoint-up(@md; {
-					grid-template-columns: repeat(2, 1fr);					
+					grid-template-columns: repeat(2, 1fr);
+					& > .is--full{
+						grid-column: span 2;
+					}			
 				});
 			}
 		}
@@ -171,7 +174,10 @@
 			&::-webkit-input-placeholder {color: @input_focus_plh_color;}
 		}
 		textarea&{
-			height: @input_height_textarea;
+			min-height: @input_height_textarea;
+			max-height: @input_height_textarea + 50;
+			min-width: 100%;
+			max-width: 100%;
 			padding: 15px 20px;
 			background-color: @input_bg;
 			border-width: @input_border_width;
